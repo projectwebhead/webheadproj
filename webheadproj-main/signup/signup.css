@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #a18be5;
+  background-image: url(/frontend/img/Wave.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: "Outfit", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.container {
+  margin-inline: auto;
+  display: flex;
+}
+
+.grid-container {
+  background: #29292b;
+  border-radius: 9px;
+  width: 35rem;
+  height: 45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+
+  -webkit-box-shadow: 1px 4px 10px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 4px 10px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 4px 10px -2px rgba(0, 0, 0, 0.5);
+}
+
+.img-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+}
+
+.text-container_flex {
+  display: flex;
+  text-align: center;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.8rem 2.8rem 1.8rem;
+  flex-direction: column;
+}
+
+.text-container_flex p {
+  font-size: 1.3rem;
+  color: #ccc3f8;
+  font-weight: 700;
+}
+
+/* INPUT GUY */
+.input {
+  /* max-width: 190px; */
+  width: 24rem;
+  height: 30px;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  outline: none;
+  border-bottom: 2px solid #3f3f3f;
+  caret-color: #3f3f3f;
+  background-color: #212121;
+  padding: 5px;
+  transition: 0.5s linear;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+input::placeholder {
+  color: #3f3f3f;
+}
+
+.input:focus {
+  /* border: 2px solid #ccc3f8; */
+  caret-color: #ccc3f8;
+  color: #ccc3f8;
+  box-shadow: 4px 4px 10px #070707;
+}
+
+.input:focus::placeholder {
+  color: #ccc3f8;
+}
+
+.text-container_flex button {
+  background-color: #3f3f3f;
+  color: #fff;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.text-container_flex button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  background-color: #746bba;
+  /* background-color: rgb(128, 95, 247); */
+}
+
+.text-container_flex button:active {
+  transform: translateY(0.5em);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.signup_link {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666666;
+}
+
+.signup_link a {
+  color: #a18be5;
+  text-decoration: none;
+}
+
+.signup_link a:hover {
+  text-decoration: underline;
+}

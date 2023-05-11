@@ -1,0 +1,125 @@
+html {
+  font-size: 62.5%;
+}
+
+.tags {
+  background-color: #161616;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  color: #cff800;
+  /* color: #b935fb; */
+  font-family: "Roboto Mono", sans-serif;
+}
+
+.sub-tags {
+  background-color: #a18be5;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  font-family: "Roboto Mono", sans-serif;
+  color: #1c2331;
+  font-weight: normal;
+}
+
+/* CODE CONTAINER ONLY! */
+
+.code-container {
+  background: #2a2d37;
+  /*   display: inline-block; */
+  border-radius: 6px;
+  overflow: auto;
+  padding: 0.7rem;
+  margin-bottom: 4rem;
+}
+
+.code-container code {
+  color: #fff;
+  font-size: 1.6rem;
+  display: flex;
+}
+
+.pl-space {
+  padding-left: 2rem;
+}
+
+.pl-space-2 {
+  padding-left: 1rem;
+}
+
+.pl-space-4 {
+  padding-left: 4rem;
+}
+
+pre {
+  counter-reset: linenumber;
+  white-space: nowrap;
+}
+
+code {
+  line-height: 3rem;
+}
+
+pre code:before {
+  counter-increment: linenumber;
+  content: counter(linenumber);
+  width: 2em;
+  padding-right: 0.5em;
+  text-align: right;
+  color: gray;
+  border-right: 1px solid gray;
+  margin-right: 0.5em;
+  white-space: inherit;
+}
+
+.doctype-text {
+  color: #666;
+}
+
+.doc-link-text {
+  color: forestgreen;
+}
+
+.tag-white {
+  color: #f1f1fb;
+}
+
+.code-text-clr {
+  color: #8dd7bf;
+}
+
+.code-link-clr {
+  color: #cff800;
+}
+
+.property-clr {
+  color: #ffb3c6;
+}
+
+.selector-clr {
+  color: #b8e2f2;
+}
+
+.comment-clr {
+  color: rgba(196, 196, 196, 0.5);
+}
+
+.class-clr {
+  color: #fffc99;
+}
+
+.en-clr {
+  color: greenyellow;
+}
+
+/* EMBED GOD */
+
+.embed-container {
+  margin-bottom: 2rem;
+}
+
+.note-container {
+  padding: 2rem;
+  background: #393150;
+  border-left: solid 10px #a18be5;
+}

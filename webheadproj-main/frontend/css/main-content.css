@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1c1c1c;
+  font-family: "Roboto Mono", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --moon-hvr-clr: #f7df1e;
+  --challenge-content-bg: #ededef;
+}
+
+.main-content {
+  padding: 9.6rem 0 7.6rem 0;
+}
+
+.main-content h1 {
+  text-align: center;
+  color: #fff;
+  padding-bottom: 2rem;
+  font-size: 2.4rem;
+}
+
+.info-text h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.info-text p {
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.intro {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+.container {
+  /* 1140 px  */
+  max-width: 70rem;
+  /* padding: 0 3.2rem; */
+  margin: 0 auto 5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7.6rem;
+  padding: 0 4.8rem;
+  border-bottom: 1px solid #353535;
+}
+
+.icon {
+  height: 3.7rem;
+}
+
+.link-icon {
+  font-size: 1.8rem;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.btn-toggle--mode {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.btn-dark--mode:hover {
+  color: var(--moon-hvr-clr);
+}
+.btn-dark--mode {
+  height: 2.2rem;
+  width: 2.2rem;
+  color: var(--challenge-content-bg);
+}
+
+.acc-btn {
+  height: 2.2rem;
+  width: 2.2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: white;
+  font-size: 3rem;
+}
+
+.course-container {
+  padding: 1.6rem;
+}
+
+.link--spc {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+/* FLEX FLEX FLEX */
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex p {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.flex-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.check-box-icon {
+  font-size: 2.6rem;
+  color: rgba(251, 251, 253, 0.3);
+  margin-right: 1rem;
+}
+
+.hvr:hover {
+  background-color: #191919;
+  border-radius: 0.8rem;
+}
+
+.icon {
+  font-size: 2.6rem;
+  color: #fbfbfd;
+  padding-left: 1rem;
+}
+
+.container div h3 {
+  color: #fbfbfd;
+  font-size: 1.8rem;
+  padding: 1.6rem 2.4rem 1.6rem 2.4rem;
+}
+
+.clr--v {
+  background: #1f1f1f;
+  border-radius: 0.9rem;
+}
+
+.title-container {
+  border-bottom: 1px solid #353535;
+}
