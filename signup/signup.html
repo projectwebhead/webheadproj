@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <link rel="stylesheet" href="signup.css" />
-
-    <title>Login</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./../backend/signup.js" defer></script>
+    <title>Sign up</title>
   </head>
   <body>
     <div class="container">
@@ -17,18 +21,20 @@
         <div class="text-container_flex">
           <p>Welcome to Webhead!</p>
           <input
+            class="username"
             placeholder="Enter username"
             class="input"
             name="text"
             type="text"
           />
           <input
+            class="password"
             placeholder="Enter password"
             class="input"
             name="password"
             type="password"
           />
-          <button>Sign Up</button>
+          <button class="sign-up">Sign Up</button>
         </div>
       </div>
     </div>
