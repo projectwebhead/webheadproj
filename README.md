@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="img/icon.png" alt="web-head-icon" />
+  <img src="/frontend/img/icon.png" alt="web-head-icon" />
   <h1> Web Head Website </h1>
 </div>
 
