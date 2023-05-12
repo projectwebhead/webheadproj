@@ -14,7 +14,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -123,6 +123,10 @@ input::placeholder {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+.text-container_flex input::placeholder {
+  color: rgb(170, 170, 170) !important;
+}
+
 .signup_link {
   margin-bottom: 2rem;
   text-align: center;
@@ -137,4 +141,9 @@ input::placeholder {
 
 .signup_link a:hover {
   text-decoration: underline;
+}
+
+.username,
+.password {
+  background-color: #252525;
 }
