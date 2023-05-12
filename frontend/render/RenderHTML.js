@@ -14,7 +14,7 @@ class RenderHTML {
   HtmlFunProject = this.html.PROJECTMusicPlaylist;
 
   constructor() {
-    // this.renderContent(1);
+    // this.renderContent();
   }
 
   renderContent(topicNumber) {

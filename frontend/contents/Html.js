@@ -2,7 +2,7 @@
 
 class Html {
   introductionToHtmlAndCss = `
-    <div><div class="container main-content">
+    <div class="html-1"><div class="container main-content">
     <div class="logo--title">
       <svg
         fill="none"
@@ -180,7 +180,7 @@ class Html {
     `;
 
   elementsAndTags = `
-   <div>
+   <div  class="html-2 ">
    <div class="container main-content">
    <div class="logo--title">
      <svg
@@ -382,7 +382,7 @@ class Html {
     `;
 
   htmlBoilerplate = `
-    <div>
+  <div  class="html-3 ">
     <div class="container main-content">
     <div class="logo--title">
       <svg
@@ -993,7 +993,7 @@ class Html {
     `;
 
   workingWithText = `
-    <div>
+  <div  class="html-4 ">
     <div class="container main-content">
     <div class="logo--title">
       <svg
@@ -1122,17 +1122,21 @@ class Html {
             padding: 1em;
           "
         >
-          <span
-            >See the Pen
-            <a href="https://codepen.io/janeobenidi/pen/VwEyPVa">
-              Untitled</a
-            >
-            by Janeo Benidi (<a
-              href="https://codepen.io/janeobenidi"
-              >@janeobenidi</a
-            >) on <a href="https://codepen.io">CodePen</a>.</span
-          >
-        </p>
+        <span
+        >See the Pen
+        <a href="https://codepen.io/janeobenidi/pen/VwEyPVa">
+          Untitled</a
+        >
+        by Janeo Benidi (<a
+          href="https://codepen.io/janeobenidi"
+          >@janeobenidi</a
+        >) on <a href="https://codepen.io">CodePen</a>.</span
+      >
+    </p>
+    <script
+      async
+      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+    ></script>
         
       </div>
 
@@ -1755,11 +1759,19 @@ class Html {
       </ul>
     </section>
   </div>
+  <script
+  type="module"
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+  async
+  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+></script>
     </div>
     `;
 
   lists = `
-    <div>
+  <div  class="html-5 ">
     <div class="container main-content">
     <div class="logo--title">
       <svg
@@ -2020,7 +2032,7 @@ class Html {
     `;
 
   linksAndImages = `
-   <div>
+  <div  class="html-6 ">
    <div class="container main-content">
    <div class="logo--title">
      <svg
@@ -2774,7 +2786,7 @@ class Html {
     `;
 
   PROJECTMusicPlaylist = `
-   <div>
+  <div  class="html-7 ">
    <div class="container main-content">
    <div class="logo--title">
      <svg
