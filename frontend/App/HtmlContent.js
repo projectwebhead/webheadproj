@@ -9,8 +9,11 @@ const parent = document.querySelector('.parent-content');
 let contentNum = 1;
 
 const renderHtml = new RenderHTML();
-
 renderHtml.renderContent(contentNum);
+
+parent.classList.add('hidden');
+document.getElementById('btn-section').classList.add('hidden');
+document.querySelector('footer').classList.add('hidden');
 
 viewCourse.addEventListener('click', (e) => {
   e.preventDefault();
