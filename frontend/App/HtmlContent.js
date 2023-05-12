@@ -5,6 +5,7 @@ import RenderHTML from '../render/RenderHTML.js';
 const viewCourse = document.querySelector('.view-course');
 const btnNext = document.querySelector('.next-button');
 const parent = document.querySelector('.parent-content');
+const parentCourse = document.querySelector('.course');
 
 let contentNum = 1;
 
@@ -17,7 +18,15 @@ document.querySelector('footer').classList.add('hidden');
 
 viewCourse.addEventListener('click', (e) => {
   e.preventDefault();
-  location.href = './../../main-content-html/course.html';
+
+  parentCourse.classList.remove('hidden');
+  parent.classList.add('hidden');
+  document.getElementById('btn-section').classList.add('hidden');
+  document.querySelector('footer').classList.add('hidden');
+
+  document
+    .querySelector('.header')
+    .scrollIntoView({ behavior: 'smooth' });
 });
 
 btnNext.addEventListener('click', (e) => {

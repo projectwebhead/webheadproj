@@ -7,6 +7,7 @@ const parentCourse = document.querySelector('.course');
 htmlFun1.addEventListener('click', (e) => {
   e.preventDefault();
   console.log('test');
+  
   parentCourse.classList.add('hidden');
   parent.classList.remove('hidden');
   document.getElementById('btn-section').classList.remove('hidden');
