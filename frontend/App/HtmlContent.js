@@ -1,66 +1,67 @@
 'use strict';
 
 import RenderHTML from '../render/RenderHTML.js';
+import Utility from './../utils/Utility.js';
 
 const viewCourse = document.querySelector('.view-course');
 const btnNext = document.querySelector('.next-button');
 const parent = document.querySelector('.parent-content');
 const parentCourse = document.querySelector('.course');
+const htmlFun1 = document.querySelector('.html-fun-1');
 
 let contentNum = 1;
 
 const renderHtml = new RenderHTML();
+const utility = new Utility();
+
 renderHtml.renderContent(contentNum);
 
-parent.classList.add('hidden');
-document.getElementById('btn-section').classList.add('hidden');
-document.querySelector('footer').classList.add('hidden');
+utility.hide(
+  parent,
+  document.getElementById('btn-section'),
+  document.querySelector('footer')
+);
 
 viewCourse.addEventListener('click', (e) => {
   e.preventDefault();
 
-  parentCourse.classList.remove('hidden');
-  parent.classList.add('hidden');
-  document.getElementById('btn-section').classList.add('hidden');
-  document.querySelector('footer').classList.add('hidden');
+  utility.hide(
+    parent,
+    document.getElementById('btn-section'),
+    document.querySelector('footer')
+  );
 
-  document
-    .querySelector('.header')
-    .scrollIntoView({ behavior: 'smooth' });
+  utility.show(parentCourse);
+  utility.scrollInto('header');
+
+  contentNum = 1;
 });
 
 btnNext.addEventListener('click', (e) => {
   e.preventDefault();
 
   contentNum += 1;
+
   if (contentNum > 7) return;
+
+  utility.renderLimit(parent);
+  renderHtml.renderContent(contentNum);
+  utility.scrollInto('header');
+  utility.asyncEmbed(true);
+  utility.removeBtn(contentNum, btnNext);
+});
+
+htmlFun1.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log('test');
+
+  renderHtml.renderContent(contentNum);
   if (parent.childElementCount > 0) {
     parent.removeChild(parent.firstElementChild);
   }
-  renderHtml.renderContent(contentNum);
 
-  document
-    .querySelector('.header')
-    .scrollIntoView({ behavior: 'smooth' });
-
-  const FILE = 'https://cpwebassets.codepen.io/assets/embed/ei.js';
-
-  function loadJS(FILE_URL, async = true) {
-    let scriptEle = document.createElement('script');
-
-    scriptEle.setAttribute('src', FILE_URL);
-    scriptEle.setAttribute('type', 'text/javascript');
-    scriptEle.setAttribute('async', async);
-
-    document.body.appendChild(scriptEle);
-
-    scriptEle.addEventListener('load', () => {
-      console.log('File loaded');
-    });
-
-    scriptEle.addEventListener('error', (ev) => {
-      console.log('Error on loading file', ev);
-    });
-  }
-  loadJS(FILE, true);
+  parentCourse.classList.add('hidden');
+  parent.classList.remove('hidden');
+  document.getElementById('btn-section').classList.remove('hidden');
+  document.querySelector('footer').classList.remove('hidden');
 });
