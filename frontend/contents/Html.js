@@ -2,7 +2,7 @@
 
 class Html {
   introductionToHtmlAndCss = `
-    <div class="html-1"><div class="container main-content">
+    <div class="html-1" id="html-section-1"><div class="container main-content">
     <div class="logo--title">
       <svg
         fill="none"
@@ -180,7 +180,7 @@ class Html {
     `;
 
   elementsAndTags = `
-   <div  class="html-2 ">
+   <div  class="html-2" id="html-section-2">
    <div class="container main-content">
    <div class="logo--title">
      <svg

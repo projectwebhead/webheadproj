@@ -7,14 +7,13 @@ const viewCourse = document.querySelector('.view-course');
 const btnNext = document.querySelector('.next-button');
 const parent = document.querySelector('.parent-content');
 const parentCourse = document.querySelector('.course');
-const htmlFun1 = document.querySelector('.html-fun-1');
 
 let contentNum = 1;
 
 const renderHtml = new RenderHTML();
 const utility = new Utility();
 
-renderHtml.renderContent(contentNum);
+// renderHtml.renderContent(contentNum);
 
 utility.hide(
   parent,
@@ -51,17 +50,23 @@ btnNext.addEventListener('click', (e) => {
   utility.removeBtn(contentNum, btnNext);
 });
 
-htmlFun1.addEventListener('click', (e) => {
-  e.preventDefault();
-  console.log('test');
+const tabs = document.querySelectorAll('.flex[data-tab]');
+tabs.forEach((tab) =>
+  tab.addEventListener('click', () => {
+    const tabNumber = tab.getAttribute('data-tab');
 
-  renderHtml.renderContent(contentNum);
-  if (parent.childElementCount > 0) {
-    parent.removeChild(parent.firstElementChild);
-  }
+    contentNum = Number(tabNumber);
 
-  parentCourse.classList.add('hidden');
-  parent.classList.remove('hidden');
-  document.getElementById('btn-section').classList.remove('hidden');
-  document.querySelector('footer').classList.remove('hidden');
-});
+    utility.renderLimit(parent);
+    renderHtml.renderContent(contentNum);
+
+    utility.show(
+      parent,
+      document.getElementById('btn-section'),
+      document.querySelector('footer')
+    );
+
+    utility.asyncEmbed(true);
+    utility.hide(parentCourse);
+  })
+);
