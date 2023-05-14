@@ -66,3 +66,34 @@ exports.signup = async (req, res) => {
     });
   }
 };
+
+exports.markAsDone = async (req, res) => {
+  try {
+    const { _id, course } = req.body;
+
+    console.log(course);
+
+    const mark = await User.findOneAndUpdate(_id, course, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (mark != null) {
+      res.status(200).json({
+        status: 'success',
+        message: 'Marked as done!',
+        data: mark,
+      });
+    } else {
+      res.json({
+        status: 'fail',
+        message: 'Unable to mark mark as done!',
+      });
+    }
+  } catch (err) {
+    res.status(500).json({
+      status: 'fail',
+      error: err.message,
+    });
+  }
+};
