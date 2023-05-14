@@ -18,8 +18,13 @@ const login = async (username, password) => {
     });
 
     if (res.data.status === 'success') {
-      console.log(res.data.data);
+      console.log(res.data.data._id);
       alert(`${res.data.message}`);
+      var jsonContact = [{ id: res.data.data._id }];
+      sessionStorage.setItem(
+        'currentUser',
+        JSON.stringify(jsonContact)
+      );
       location.href = './../index.html';
     } else {
       console.log(res.data);
@@ -29,9 +34,21 @@ const login = async (username, password) => {
     console.log(err.response.data);
   }
 };
+const users = async () => {
+  try {
+    const res = await axios({
+      method: 'GET',
+      url: `${baseURL}/api/v1/auth/login`,
+    });
 
+    console.log(res.data);
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
+
+users();
 btnLogin.addEventListener('click', (e) => {
   e.preventDefault();
-
   login(usernames.value, passwords.value);
 });

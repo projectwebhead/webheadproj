@@ -6,7 +6,7 @@ const btnSignup = document.querySelector('.sign-up');
 
 const baseURL = 'http://127.0.0.1:8008';
 
-const login = async (username, password) => {
+const login = async (username, password, id) => {
   try {
     const res = await axios({
       method: 'POST',
@@ -14,6 +14,7 @@ const login = async (username, password) => {
       data: {
         username,
         password,
+        id,
       },
     });
 
@@ -30,8 +31,11 @@ const login = async (username, password) => {
   }
 };
 
-btnSignup.addEventListener('click', (e) => {
+btnSignup.addEventListener('click', async (e) => {
   e.preventDefault();
-
-  login(username.value, password.value);
+  const id = await axios({
+    method: 'GET',
+    url: `${baseURL}/api/v1/auth/login`,
+  });
+  login(username.value, password.value, id.data.data.length + 1);
 });
