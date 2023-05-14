@@ -50,15 +50,19 @@ exports.signup = async (req, res) => {
 
     res.status(200).json({
       status: 'success',
-      message: 'User created successfully!',
+      message: 'Successfully signed up!',
       data: {
         user: newUser,
       },
     });
   } catch (err) {
+    const { errors, message } = err;
+
     res.json({
       status: 'fail',
-      message: 'Invalid data sent!',
+      message: message.includes('E11000')
+        ? 'Username is already taken'
+        : message,
     });
   }
 };
