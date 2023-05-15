@@ -81,6 +81,7 @@ body {
   transition: 0.5s linear;
   font-family: monospace;
   letter-spacing: 1px;
+  color: #f1f1fb;
 }
 
 input::placeholder {
