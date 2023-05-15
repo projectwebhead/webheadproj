@@ -69,11 +69,12 @@ exports.signup = async (req, res) => {
 
 exports.markAsDone = async (req, res) => {
   try {
-    const { _id, course } = req.body;
-
+    const { course } = req.body;
+    const ID = { _id: req.body.id };
     console.log(course);
+    console.log(ID);
 
-    const mark = await User.findOneAndUpdate(_id, course, {
+    const mark = await User.findOneAndUpdate(ID, course, {
       new: true,
       runValidators: true,
     });
@@ -88,6 +89,32 @@ exports.markAsDone = async (req, res) => {
       res.json({
         status: 'fail',
         message: 'Unable to mark mark as done!',
+      });
+    }
+  } catch (err) {
+    res.status(500).json({
+      status: 'fail',
+      error: err.message,
+    });
+  }
+};
+
+exports.getById = async (req, res) => {
+  try {
+    const _id = req.body._id[0].id;
+
+    const user = await User.findById(_id);
+
+    if (user != null) {
+      res.status(200).json({
+        status: 'success',
+        message: 'User ID successfully retrieved',
+        data: user,
+      });
+    } else {
+      res.json({
+        status: 'fail',
+        message: 'Invalid User ID',
       });
     }
   } catch (err) {

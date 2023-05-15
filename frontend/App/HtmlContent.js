@@ -17,7 +17,38 @@ const baseURL = 'http://127.0.0.1:8008';
 const renderHtml = new RenderHTML();
 const utility = new Utility();
 
-// renderHtml.renderContent(contentNum);
+const cheboxIcons = document.querySelectorAll('.check-box-icon');
+
+const curUser = JSON.parse(sessionStorage.getItem('currentUser'));
+
+const renderCheckbox = async (id) => {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: `${baseURL}/api/v1/auth/fetchUser`,
+      data: {
+        _id: id,
+      },
+    });
+
+    return res.data;
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
+
+const checkbox = async () => {
+  const res = await renderCheckbox(curUser);
+
+  cheboxIcons.forEach((icon) => {
+    if (res.data[icon.dataset.code] == 1) {
+      document.querySelector(`.${icon.dataset.code}`).style.fill =
+        'lightgreen';
+    }
+    console.log(res.data[icon.dataset.code]);
+  });
+};
+checkbox();
 
 utility.hide(
   parent,
@@ -27,6 +58,8 @@ utility.hide(
 
 viewCourse.addEventListener('click', (e) => {
   e.preventDefault();
+
+  checkbox();
 
   utility.hide(
     parent,
@@ -131,10 +164,16 @@ const markAsDone = async (id, course) => {
 btnMarkAsDone.addEventListener('click', (e) => {
   e.preventDefault();
 
+  checkbox();
   const currentUser = JSON.parse(
     sessionStorage.getItem('currentUser')
   );
+  console.log(currentUser);
   const currentTab = markSwitch(markTab);
 
   markAsDone(currentUser[0].id, currentTab);
 });
+
+// const checkH1 = document.querySelector('.h1');
+
+// checkH1.style.fill = 'white';

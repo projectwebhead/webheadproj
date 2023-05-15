@@ -14,4 +14,6 @@ router.route('/signup').post(userController.signup);
 
 router.route('/save').post(userController.markAsDone);
 
+router.route('/fetchUser').post(userController.getById);
+
 module.exports = router;
