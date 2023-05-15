@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap");
 
 * {
   padding: 0;
@@ -8,7 +8,7 @@
 
 body {
   background-color: #1c1c1c;
-  font-family: 'Roboto Mono', sans-serif;
+  font-family: "Roboto Mono", sans-serif;
 }
 
 html {
@@ -56,7 +56,7 @@ a {
 }
 .container {
   /* 1140 px  */
-  max-width: 70rem;
+  max-width: 85rem;
   /* padding: 0 3.2rem; */
   margin: 0 auto 5rem;
 }
