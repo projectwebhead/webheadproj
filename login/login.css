@@ -14,7 +14,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -77,6 +77,7 @@ body {
   border-bottom: 2px solid #3f3f3f;
   caret-color: #3f3f3f;
   background-color: #212121;
+  color: #f1f1fb;
   padding: 5px;
   transition: 0.5s linear;
   font-family: monospace;
