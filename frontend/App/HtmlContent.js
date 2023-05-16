@@ -42,13 +42,11 @@ const renderCheckbox = async (id) => {
 const checkbox = async () => {
   const res = await renderCheckbox(curUser);
 
-  console.log(res);
   cheboxIcons.forEach((icon) => {
     if (res.data[icon.dataset.code] == 1) {
       document.querySelector(`.${icon.dataset.code}`).style.fill =
         'lightgreen';
     }
-    console.log(`RES CODE${res.data[icon.dataset.code]}`);
   });
 };
 checkbox();
@@ -81,7 +79,6 @@ btnNext.addEventListener('click', (e) => {
 
   contentNum += 1;
   markTab += 1;
-  console.log(markTab);
 
   // if (contentNum > 7) return;
 
@@ -108,7 +105,7 @@ tabs.forEach((tab) =>
     markTab = Number(contentNum);
 
     utility.renderLimit(parent);
-    
+
     if (contentNum <= 7) {
       renderHtml.renderContent(contentNum);
     } else if (contentNum > 7 && contentNum <= 11) {
@@ -178,10 +175,8 @@ const markAsDone = async (id, course) => {
     });
 
     if (res.data.status === 'success') {
-      console.log(res.data);
       alert(`${res.data.message}`);
     } else {
-      console.log(res.data);
       alert(`${res.data.message}`);
     }
   } catch (err) {
@@ -196,7 +191,6 @@ btnMarkAsDone.addEventListener('click', (e) => {
   const currentUser = JSON.parse(
     sessionStorage.getItem('currentUser')
   );
-  console.log(currentUser);
   const currentTab = markSwitch(markTab);
 
   markAsDone(currentUser[0].id, currentTab);
