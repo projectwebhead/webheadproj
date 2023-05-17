@@ -1,6 +1,7 @@
 'use strict';
 
 import RenderHTML from '../render/RenderHTML.js';
+import RenderCSS from '../render/RenderCSS.js';
 import Utility from './../utils/Utility.js';
 
 const viewCourse = document.querySelector('.view-course');
@@ -12,9 +13,10 @@ const btnMarkAsDone = document.querySelector('.mark-as-done-btn');
 let contentNum = 1;
 let markTab = 0;
 
-const baseURL = 'http://127.0.0.1:8008';
+const baseURL = 'https://webheadapi.onrender.com';
 
 const renderHtml = new RenderHTML();
+const renderCss = new RenderCSS();
 const utility = new Utility();
 
 const cheboxIcons = document.querySelectorAll('.check-box-icon');
@@ -45,7 +47,6 @@ const checkbox = async () => {
       document.querySelector(`.${icon.dataset.code}`).style.fill =
         'lightgreen';
     }
-    console.log(res.data[icon.dataset.code]);
   });
 };
 checkbox();
@@ -78,15 +79,20 @@ btnNext.addEventListener('click', (e) => {
 
   contentNum += 1;
   markTab += 1;
-  console.log(markTab);
 
-  if (contentNum > 7) return;
+  // if (contentNum > 7) return;
 
   utility.renderLimit(parent);
-  renderHtml.renderContent(contentNum);
+  if (contentNum <= 7) {
+    renderHtml.renderContent(contentNum);
+  } else if (contentNum > 7 && contentNum <= 11) {
+    renderCss.renderContent(contentNum);
+  } else {
+    console.log('lamar');
+  }
   utility.scrollInto('header');
   utility.asyncEmbed(true);
-  utility.removeBtn(contentNum, btnNext);
+  // utility.removeBtn(contentNum, btnNext);
 });
 
 const tabs = document.querySelectorAll('.flex[data-tab]');
@@ -99,7 +105,14 @@ tabs.forEach((tab) =>
     markTab = Number(contentNum);
 
     utility.renderLimit(parent);
-    renderHtml.renderContent(contentNum);
+
+    if (contentNum <= 7) {
+      renderHtml.renderContent(contentNum);
+    } else if (contentNum > 7 && contentNum <= 11) {
+      renderCss.renderContent(contentNum);
+    } else {
+      console.log('lamar');
+    }
 
     utility.show(
       parent,
@@ -135,6 +148,18 @@ function markSwitch(num) {
     case 7:
       return { h7: 1 };
       break;
+    case 8:
+      return { c1: 1 };
+      break;
+    case 9:
+      return { c2: 1 };
+      break;
+    case 10:
+      return { c3: 1 };
+      break;
+    case 11:
+      return { c4: 1 };
+      break;
   }
 }
 
@@ -150,10 +175,8 @@ const markAsDone = async (id, course) => {
     });
 
     if (res.data.status === 'success') {
-      console.log(res.data);
       alert(`${res.data.message}`);
     } else {
-      console.log(res.data);
       alert(`${res.data.message}`);
     }
   } catch (err) {
@@ -168,7 +191,6 @@ btnMarkAsDone.addEventListener('click', (e) => {
   const currentUser = JSON.parse(
     sessionStorage.getItem('currentUser')
   );
-  console.log(currentUser);
   const currentTab = markSwitch(markTab);
 
   markAsDone(currentUser[0].id, currentTab);

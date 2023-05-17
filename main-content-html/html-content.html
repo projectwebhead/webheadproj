@@ -17,12 +17,15 @@
       <nav class="main-nav">
         <ul class="nav-list">
           <li>
-            <button
-              title="Account Icon"
-              type="button"
-              class="acc-btn"
-              onclick="toggleMenu()"
-            >
+            <button title="Dark Mode" type="button" class="btn-toggle--mode">
+              <ion-icon
+                class="btn__mode btn-dark--mode"
+                name="moon-sharp"
+              ></ion-icon>
+            </button>
+          </li>
+          <li>
+            <button title="Account Icon" type="button" class="acc-btn">
               <ion-icon name="person-circle-outline"></ion-icon>
             </button>
           </li>
@@ -228,7 +231,7 @@
           <h3>CSS Fundamentals</h3>
         </div>
         <div class="course-container">
-          <div class="flex">
+          <div class="flex" data-tab="8">
             <a href="#" class="link--spc flex-grow">
               <div class="flex-flex hvr">
                 <div class="flex">
@@ -240,12 +243,13 @@
                 </div>
                 <ion-icon
                   name="checkmark-circle"
-                  class="check-box-icon"
+                  class="check-box-icon c1"
+                  data-code="c1"
                 ></ion-icon>
               </div>
             </a>
           </div>
-          <div class="flex">
+          <div class="flex" data-tab="9">
             <a href="#" class="link--spc flex-grow">
               <div class="flex-flex hvr">
                 <div class="flex">
@@ -257,12 +261,13 @@
                 </div>
                 <ion-icon
                   name="checkmark-circle"
-                  class="check-box-icon"
+                  class="check-box-icon c2"
+                  data-code="c2"
                 ></ion-icon>
               </div>
             </a>
           </div>
-          <div class="flex">
+          <div class="flex" data-tab="10">
             <a href="#" class="link--spc flex-grow">
               <div class="flex-flex hvr">
                 <div class="flex">
@@ -274,12 +279,13 @@
                 </div>
                 <ion-icon
                   name="checkmark-circle"
-                  class="check-box-icon"
+                  class="check-box-icon c3"
+                  data-code="c3"
                 ></ion-icon>
               </div>
             </a>
           </div>
-          <div class="flex">
+          <div class="flex" data-tab="11">
             <a href="#" class="link--spc flex-grow">
               <div class="flex-flex hvr">
                 <div class="flex">
@@ -291,7 +297,8 @@
                 </div>
                 <ion-icon
                   name="checkmark-circle"
-                  class="check-box-icon"
+                  class="check-box-icon c4"
+                  data-code="c4"
                 ></ion-icon>
               </div>
             </a>
@@ -503,13 +510,5 @@
     ></script>
     <script src="./../frontend/render/RenderHTML.js" type="module"></script>
     <script src="./../frontend/App/HtmlContent.js" type="module"></script>
-    \
-    <script>
-      let subMenu = document.getElementById("subMenu");
-
-      function toggleMenu() {
-        subMenu.classList.toggle("open-menu");
-      }
-    </script>
   </body>
 </html>
