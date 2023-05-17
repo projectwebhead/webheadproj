@@ -1,5 +1,6 @@
 'use strict';
 
+// Code for testing
 // const htmlFun1 = document.querySelector('.html-fun-1');
 // const parent = document.querySelector('.parent-content');
 // const parentCourse = document.querySelector('.course');

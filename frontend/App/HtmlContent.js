@@ -2,6 +2,7 @@
 
 import RenderHTML from '../render/RenderHTML.js';
 import RenderCSS from '../render/RenderCSS.js';
+import RenderJS from '../render/RenderJS.js';
 import Utility from './../utils/Utility.js';
 
 const viewCourse = document.querySelector('.view-course');
@@ -17,6 +18,7 @@ const baseURL = 'https://webheadapi.onrender.com';
 
 const renderHtml = new RenderHTML();
 const renderCss = new RenderCSS();
+const renderJs = new RenderJS();
 const utility = new Utility();
 
 const cheboxIcons = document.querySelectorAll('.check-box-icon');
@@ -80,19 +82,20 @@ btnNext.addEventListener('click', (e) => {
   contentNum += 1;
   markTab += 1;
 
-  // if (contentNum > 7) return;
-
   utility.renderLimit(parent);
+
   if (contentNum <= 7) {
     renderHtml.renderContent(contentNum);
   } else if (contentNum > 7 && contentNum <= 11) {
     renderCss.renderContent(contentNum);
+  } else if (contentNum > 15 && contentNum <= 22) {
+    renderJs.renderContent(contentNum);
   } else {
     console.log('lamar');
   }
+
   utility.scrollInto('header');
   utility.asyncEmbed(true);
-  // utility.removeBtn(contentNum, btnNext);
 });
 
 const tabs = document.querySelectorAll('.flex[data-tab]');
@@ -110,6 +113,8 @@ tabs.forEach((tab) =>
       renderHtml.renderContent(contentNum);
     } else if (contentNum > 7 && contentNum <= 11) {
       renderCss.renderContent(contentNum);
+    } else if (contentNum > 15 && contentNum <= 22) {
+      renderJs.renderContent(contentNum);
     } else {
       console.log('lamar');
     }
@@ -160,6 +165,27 @@ function markSwitch(num) {
     case 11:
       return { c4: 1 };
       break;
+    case 16:
+      return { j1: 1 };
+      break;
+    case 17:
+      return { j2: 1 };
+      break;
+    case 18:
+      return { j3: 1 };
+      break;
+    case 19:
+      return { j4: 1 };
+      break;
+    case 20:
+      return { j5: 1 };
+      break;
+    case 21:
+      return { j6: 1 };
+      break;
+    case 22:
+      return { j7: 1 };
+      break;
   }
 }
 
@@ -195,7 +221,3 @@ btnMarkAsDone.addEventListener('click', (e) => {
 
   markAsDone(currentUser[0].id, currentTab);
 });
-
-// const checkH1 = document.querySelector('.h1');
-
-// checkH1.style.fill = 'white';
