@@ -25,6 +25,8 @@ const cheboxIcons = document.querySelectorAll('.check-box-icon');
 
 const curUser = JSON.parse(sessionStorage.getItem('currentUser'));
 
+const logout = document.querySelector('.logout');
+
 const fetchUserData = async (id) => {
   try {
     const res = await axios({
@@ -92,6 +94,7 @@ viewCourse.addEventListener('click', (e) => {
   e.preventDefault();
 
   checkbox();
+  profileInfo();
 
   utility.hide(
     parent,
@@ -107,6 +110,8 @@ viewCourse.addEventListener('click', (e) => {
 
 btnNext.addEventListener('click', (e) => {
   e.preventDefault();
+
+  profileInfo();
 
   contentNum += 1;
   markTab += 1;
@@ -249,4 +254,10 @@ btnMarkAsDone.addEventListener('click', (e) => {
   const currentTab = markSwitch(markTab);
 
   markAsDone(currentUser[0].id, currentTab);
+});
+
+logout.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log('test');
+  location.href = './../login/login.html';
 });

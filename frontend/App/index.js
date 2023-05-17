@@ -1,16 +1,62 @@
 'use strict';
 
-// Code for testing
-// const htmlFun1 = document.querySelector('.html-fun-1');
-// const parent = document.querySelector('.parent-content');
-// const parentCourse = document.querySelector('.course');
+import Utility from './../utils/Utility.js';
 
-// htmlFun1.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   console.log('test');
+const utility = new Utility();
 
-//   parentCourse.classList.add('hidden');
-//   parent.classList.remove('hidden');
-//   document.getElementById('btn-section').classList.remove('hidden');
-//   document.querySelector('footer').classList.remove('hidden');
-// });
+const curUser = JSON.parse(sessionStorage.getItem('currentUser'));
+const logout = document.querySelector('.logout');
+
+const baseURL = 'https://webheadapi.onrender.com';
+
+const fetchUserData = async (id) => {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: `${baseURL}/api/v1/auth/fetchUser`,
+      data: {
+        _id: id,
+      },
+    });
+    return res.data;
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
+
+const profileInfo = async () => {
+  const profile = await fetchUserData(curUser);
+
+  const currentUser = document.querySelector('.current-user');
+  const htmlProg = document.querySelector('.html-progress');
+  const cssProg = document.querySelector('.css-progress');
+  const jsProg = document.querySelector('.js-progress');
+
+  let h = 0,
+    c = 0,
+    j = 0;
+
+  let html = 0,
+    css = 0,
+    js = 0;
+
+  const hProg = utility.progressCounter(h, html, 'h', profile.data);
+  const cProg = utility.progressCounter(c, css, 'c', profile.data);
+  const jProg = utility.progressCounter(j, js, 'j', profile.data);
+
+  currentUser.innerHTML =
+    profile.data.username.charAt(0).toUpperCase() +
+    profile.data.username.slice(1);
+
+  htmlProg.innerHTML = hProg;
+  cssProg.innerHTML = cProg;
+  jsProg.innerHTML = jProg;
+};
+
+profileInfo();
+
+logout.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log('test');
+  location.href = './../login/login.html';
+});
