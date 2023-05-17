@@ -13,23 +13,63 @@
   </head>
   <body>
     <header class="header">
-      <img class="icon" src="img/icon.png" alt="Web Head Logo" />
+      <img class="webhead-icon" src="img/icon.png" alt="Web Head Logo" />
       <nav class="main-nav">
         <ul class="nav-list">
           <li>
-            <button title="Dark Mode" type="button" class="btn-toggle--mode">
-              <ion-icon
-                class="btn__mode btn-dark--mode"
-                name="moon-sharp"
-              ></ion-icon>
-            </button>
-          </li>
-          <li>
-            <button title="Account Icon" type="button" class="acc-btn">
+            <button
+              title="Account Icon"
+              type="button"
+              class="acc-btn"
+              onclick="toggleMenu()"
+            >
               <ion-icon name="person-circle-outline"></ion-icon>
             </button>
           </li>
         </ul>
+
+        <div class="sub-menu-wrap" id="subMenu">
+          <div class="sub-menu">
+            <div class="user-info">
+              <ion-icon name="person-circle" class="user-pic"></ion-icon>
+
+              <h2>Kendrick Lamar</h2>
+            </div>
+            <hr />
+            <a href="#" class="sub-menu-link">
+              <ion-icon
+                name="logo-html5"
+                class="sub-menu-icon"
+                id="html"
+              ></ion-icon>
+              <p>HTML</p>
+            </a>
+            <a href="#" class="sub-menu-link">
+              <ion-icon
+                name="logo-css3"
+                class="sub-menu-icon"
+                id="css"
+              ></ion-icon>
+              <p>CSS</p>
+            </a>
+            <a href="#" class="sub-menu-link">
+              <ion-icon
+                name="logo-javascript"
+                class="sub-menu-icon"
+                id="javascript"
+              ></ion-icon>
+              <p>JavaScript</p>
+            </a>
+            <a href="#" class="sub-menu-link"
+              ><ion-icon
+                name="log-out"
+                class="sub-menu-icon"
+                id="logout-icon"
+              ></ion-icon>
+              <p>Logout (I'm outta here nigga.)</p></a
+            >
+          </div>
+        </div>
       </nav>
     </header>
 
@@ -463,5 +503,13 @@
     ></script>
     <script src="./../frontend/render/RenderHTML.js" type="module"></script>
     <script src="./../frontend/App/HtmlContent.js" type="module"></script>
+    \
+    <script>
+      let subMenu = document.getElementById("subMenu");
+
+      function toggleMenu() {
+        subMenu.classList.toggle("open-menu");
+      }
+    </script>
   </body>
 </html>
