@@ -65,6 +65,90 @@ a:hover {
   border-bottom: 1px solid #353535;
 }
 
+/* SUB MENU */
+.sub-menu-wrap {
+  position: absolute;
+  top: 8%;
+  right: 2%;
+  width: 32rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu {
+  max-height: 40rem;
+}
+
+.sub-menu {
+  background: #080808;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+.sub-menu-icon {
+  font-size: 2rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-pic {
+  font-size: 2rem;
+  padding-right: 1rem;
+  color: #f1f1fb;
+}
+
+.user-info h2 {
+  font-weight: 500;
+  color: #f1f1fb;
+}
+
+.sub-menu hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+  margin: 1.5rem 0 1rem;
+}
+
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #525252;
+  margin: 1.2rem 0;
+}
+
+.sub-menu-link p {
+  font-size: 1.3rem;
+  padding-left: 1rem;
+  color: #fbfbf1;
+}
+
+.sub-menu-link:hover p {
+  font-weight: 500;
+}
+
+#html {
+  color: #e34f26;
+}
+
+#css {
+  color: #264de4;
+}
+
+#javascript {
+  color: #f7df1e;
+}
+
+#logout-icon {
+  color: #a18be5;
+}
+
 .icon {
   height: 3.7rem;
 }
