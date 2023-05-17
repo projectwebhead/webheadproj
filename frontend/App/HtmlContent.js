@@ -25,7 +25,7 @@ const cheboxIcons = document.querySelectorAll('.check-box-icon');
 
 const curUser = JSON.parse(sessionStorage.getItem('currentUser'));
 
-const renderCheckbox = async (id) => {
+const fetchUserData = async (id) => {
   try {
     const res = await axios({
       method: 'POST',
@@ -34,7 +34,6 @@ const renderCheckbox = async (id) => {
         _id: id,
       },
     });
-
     return res.data;
   } catch (err) {
     console.log(err.response.data);
@@ -42,7 +41,7 @@ const renderCheckbox = async (id) => {
 };
 
 const checkbox = async () => {
-  const res = await renderCheckbox(curUser);
+  const res = await fetchUserData(curUser);
 
   cheboxIcons.forEach((icon) => {
     if (res.data[icon.dataset.code] == 1) {
@@ -51,6 +50,36 @@ const checkbox = async () => {
     }
   });
 };
+
+const profileInfo = async () => {
+  const profile = await fetchUserData(curUser);
+  const currentUser = document.querySelector('.current-user');
+  const htmlProg = document.querySelector('.html-progress');
+  const cssProg = document.querySelector('.css-progress');
+  const jsProg = document.querySelector('.js-progress');
+
+  let h = 0,
+    c = 0,
+    j = 0;
+
+  let html = 0,
+    css = 0,
+    js = 0;
+
+  const hProg = utility.progressCounter(h, html, 'h', profile.data);
+  const cProg = utility.progressCounter(c, css, 'c', profile.data);
+  const jProg = utility.progressCounter(j, js, 'j', profile.data);
+
+  currentUser.innerHTML =
+    profile.data.username.charAt(0).toUpperCase() +
+    profile.data.username.slice(1);
+
+  htmlProg.innerHTML = hProg;
+  cssProg.innerHTML = cProg;
+  jsProg.innerHTML = jProg;
+};
+
+profileInfo();
 checkbox();
 
 utility.hide(

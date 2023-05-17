@@ -52,6 +52,17 @@ class Utility {
       console.log('Error on loading file', ev);
     });
   }
+
+  progressCounter(i, topic, code, profileData) {
+    topic = 0;
+
+    for (i = 0; i < 7; i++) {
+      if (profileData[`${code}${i + 1}`] == 1) {
+        topic += 1;
+      }
+    }
+    return topic;
+  }
 }
 
 export default Utility;
