@@ -20,25 +20,25 @@ class RenderJS {
     let javascript = this.JsFun1;
 
     switch (topicNumber) {
-      case 16:
+      case 17:
         javascript = this.JsFun1;
         break;
-      case 17:
+      case 18:
         javascript = this.JsFun2;
         break;
-      case 18:
+      case 19:
         javascript = this.JsFun3;
         break;
-      case 19:
+      case 20:
         javascript = this.JsFun4;
         break;
-      case 20:
+      case 21:
         javascript = this.JsFun5;
         break;
-      case 21:
+      case 22:
         javascript = this.JsFun6;
         break;
-      case 22:
+      case 23:
         javascript = this.JsFun7;
         break;
     }
