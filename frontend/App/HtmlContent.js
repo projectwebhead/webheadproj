@@ -2,6 +2,7 @@
 
 import RenderHTML from '../render/RenderHTML.js';
 import RenderCSS from '../render/RenderCSS.js';
+import RenderFLEX from '../render/RenderFLEX.js';
 import RenderJS from '../render/RenderJS.js';
 import Utility from './../utils/Utility.js';
 
@@ -18,6 +19,7 @@ const baseURL = 'https://webheadapi.onrender.com';
 
 const renderHtml = new RenderHTML();
 const renderCss = new RenderCSS();
+const renderFlex = new RenderFLEX();
 const renderJs = new RenderJS();
 const utility = new Utility();
 
@@ -62,14 +64,17 @@ const profileInfo = async () => {
 
   let h = 0,
     c = 0,
+    f = 0,
     j = 0;
 
   let html = 0,
     css = 0,
+    flex = 0,
     js = 0;
 
   const hProg = utility.progressCounter(h, html, 'h', profile.data);
   const cProg = utility.progressCounter(c, css, 'c', profile.data);
+  // const fProg = utility.progressCounter(f, flex, 'f', profile.data);
   const jProg = utility.progressCounter(j, js, 'j', profile.data);
 
   currentUser.innerHTML =
@@ -122,7 +127,9 @@ btnNext.addEventListener('click', (e) => {
     renderHtml.renderContent(contentNum);
   } else if (contentNum > 7 && contentNum <= 11) {
     renderCss.renderContent(contentNum);
-  } else if (contentNum > 15 && contentNum <= 22) {
+  } else if (contentNum > 11 && contentNum <= 16) {
+    renderFlex.renderContent(contentNum);
+  } else if (contentNum > 16 && contentNum <= 23) {
     renderJs.renderContent(contentNum);
   } else {
     console.log('lamar');
@@ -147,7 +154,9 @@ tabs.forEach((tab) =>
       renderHtml.renderContent(contentNum);
     } else if (contentNum > 7 && contentNum <= 11) {
       renderCss.renderContent(contentNum);
-    } else if (contentNum > 15 && contentNum <= 22) {
+    } else if (contentNum > 11 && contentNum <= 16) {
+      renderFlex.renderContent(contentNum);
+    } else if (contentNum > 16 && contentNum <= 23) {
       renderJs.renderContent(contentNum);
     } else {
       console.log('lamar');
@@ -199,25 +208,40 @@ function markSwitch(num) {
     case 11:
       return { c4: 1 };
       break;
+    case 12:
+      return { f1: 1 };
+      break;
+    case 13:
+      return { f2: 1 };
+      break;
+    case 14:
+      return { f3: 1 };
+      break;
+    case 15:
+      return { f4: 1 };
+      break;
     case 16:
-      return { j1: 1 };
+      return { f5: 1 };
       break;
     case 17:
-      return { j2: 1 };
+      return { j1: 1 };
       break;
     case 18:
-      return { j3: 1 };
+      return { j2: 1 };
       break;
     case 19:
-      return { j4: 1 };
+      return { j3: 1 };
       break;
     case 20:
-      return { j5: 1 };
+      return { j4: 1 };
       break;
     case 21:
-      return { j6: 1 };
+      return { j5: 1 };
       break;
     case 22:
+      return { j6: 1 };
+      break;
+    case 23:
       return { j7: 1 };
       break;
   }
