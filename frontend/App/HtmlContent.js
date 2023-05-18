@@ -284,5 +284,5 @@ btnMarkAsDone.addEventListener('click', (e) => {
 logout.addEventListener('click', (e) => {
   e.preventDefault();
   console.log('test');
-  location.href = './../login/login.html';
+  location.href = './../../index.html';
 });

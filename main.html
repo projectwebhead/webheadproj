@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/frontend/img/icon.png"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/frontend/css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/frontend/css/queries.css"
+    />
+    <script
+      src="./frontend/App/index.js"
+      type="module"
+      defer
+    ></script>
+    <title>Web Head</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <img
+        class="icon"
+        src="/frontend/img/icon.png"
+        alt="Web Head Logo"
+      />
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li>
+            <button
+              title="Account Icon"
+              type="button"
+              class="acc-btn"
+              onclick="toggleMenu()"
+            >
+              <ion-icon name="person-circle-outline"></ion-icon>
+            </button>
+          </li>
+        </ul>
+
+        <div class="sub-menu-wrap" id="subMenu">
+          <div class="sub-menu">
+            <div class="user-info">
+              <ion-icon
+                name="person-circle"
+                class="user-pic"
+              ></ion-icon>
+
+              <h2 class="current-user">Kendrick Lamar</h2>
+            </div>
+            <hr />
+            <a href="#" class="sub-menu-link">
+              <ion-icon
+                name="logo-html5"
+                class="sub-menu-icon"
+                id="html"
+              ></ion-icon>
+              <p>HTML <span class="html-progress">0</span> / 7</p>
+            </a>
+            <a href="#" class="sub-menu-link">
+              <ion-icon
+                name="logo-css3"
+                class="sub-menu-icon"
+                id="css"
+              ></ion-icon>
+              <p>CSS <span class="css-progress">0</span> / 9</p>
+            </a>
+            <a href="#" class="sub-menu-link">
+              <ion-icon
+                name="logo-javascript"
+                class="sub-menu-icon"
+                id="javascript"
+              ></ion-icon>
+              <p>JavaScript <span class="js-progress">0</span> / 7</p>
+            </a>
+            <a href="#" class="sub-menu-link"
+              ><ion-icon
+                name="log-out"
+                class="sub-menu-icon"
+                id="logout-icon"
+              ></ion-icon>
+              <p class="logout">Logout</p></a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- -------- HERO SECTION -------- -->
+
+    <section class="section-hero">
+      <div class="hero">
+        <div class="hero-text-box">
+          <!-- <h3 class="primary-text">
+            Welcome to Web Head!
+            <br />
+            <br />
+          </h3> -->
+          <h1 class="primary-heading">
+            Are you an aspiring Front-end Developer?
+          </h1>
+          <p class="desc hero-desc">
+            A front-end dev takes care of the layout, design and
+            interactivity using <strong>HTML</strong>,
+            <strong>CSS</strong> and <strong>JavaScript</strong>. They
+            take an idea from the drawing board and turn it into
+            reality.
+          </p>
+
+          <a
+            href="./main-content-html/html-content.html"
+            aria-hidden="true"
+            class="btn learn-more--btn"
+            >Get Started</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- -------- LOGOS -------- -->
+
+    <section class="section-logos">
+      <div class="container">
+        <span class="sub-heading"
+          >Here are the 3 core technologies of the Web</span
+        >
+        <div class="container flex--logos">
+          <svg
+            fill="none"
+            height="2500"
+            width="2183"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 124 141.53199999999998"
+            class="logos"
+            data-aos="flip-up"
+            data-aos-duration="1500"
+          >
+            <path
+              d="M10.383 126.894L0 0l124 .255-10.979 126.639-50.553 14.638z"
+              fill="#e34f26"
+            />
+            <path
+              d="M62.468 129.277V12.085l51.064.17-9.106 104.851z"
+              fill="#ef652a"
+            />
+            <path
+              d="M99.49 41.362l1.446-15.49H22.383l4.34 47.49h54.213L78.81 93.617l-17.362 4.68-17.617-5.106-.936-12.085H27.319l2.128 24.681 32 8.936 32.255-8.936 4.34-48.17H41.107L39.49 41.362z"
+              fill="#fff"
+            />
+          </svg>
+          <?xml version="1.0" encoding="UTF-8"?>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="512"
+            height="512"
+            viewBox="0 0 512 512"
+            class="logos"
+            data-aos="flip-up"
+            data-aos-duration="1500"
+          >
+            <path
+              fill="#264de4"
+              d="M71.357 460.819L30.272 0h451.456l-41.129 460.746L255.724 512z"
+            />
+            <path
+              fill="#2965f1"
+              d="M405.388 431.408l35.148-393.73H256v435.146z"
+            />
+            <path
+              fill="#ebebeb"
+              d="M124.46 208.59l5.065 56.517H256V208.59zM119.419 150.715H256V94.197H114.281zM256 355.372l-.248.066-62.944-16.996-4.023-45.076h-56.736l7.919 88.741 115.772 32.14.26-.073z"
+            />
+            <path
+              fill="#fff"
+              d="M255.805 208.59v56.517H325.4l-6.56 73.299-63.035 17.013v58.8l115.864-32.112.85-9.549 13.28-148.792 1.38-15.176 10.203-114.393H255.805v56.518h79.639L330.3 208.59z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 630 630"
+            class="logos"
+            data-aos="flip-up"
+            data-aos-duration="1500"
+          >
+            <rect width="630" height="630" fill="#f7df1e" />
+            <path
+              d="m423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 35.95l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z"
+            />
+          </svg>
+        </div>
+      </div>
+    </section>
+    <!-- -------- EXAMPLE SECTION -------- -->
+
+    <section class="section-examples">
+      <div class="container grid grid--2-cols grid--center-v">
+        <!-- -------- HTML BOX -------- -->
+
+        <div class="text-title-box">
+          <h3 class="text-title html--heading">What is HTML?</h3>
+          <p class="desc text-title-description">
+            HyperText Markup Language (HTML) is the set of markup
+            symbols or codes inserted into a file intended for display
+            on the Internet. The markup tells web browsers how to
+            display a web page's words and images.
+          </p>
+        </div>
+        <div class="sample-box">
+          <div class="box">
+            <div class="title-box">
+              <ion-icon
+                class="cog-icon"
+                name="cog-outline"
+              ></ion-icon>
+              <p class="example-title html--heading">HTML Example</p>
+              <ion-icon
+                class="arrow-down-icon"
+                name="chevron-down-outline"
+              ></ion-icon>
+            </div>
+
+            <div class="text-content">
+              <span class="cadet-blue"> <</span
+              ><span class="cadet-blue">!</span
+              ><span class="candy-pink">DOCTYPE</span>
+              <span class="brown-yellow">html</span
+              ><span class="cadet-blue">></span>
+              <br />
+              <br />
+              <span class="cadet-blue"> <</span
+              ><span class="candy-pink">html</span
+              ><span class="cadet-blue">></span>
+              <br />
+              <span class="cadet-blue"> <</span
+              ><span class="candy-pink">body</span
+              ><span class="cadet-blue">></span>
+              <br />
+              <br />
+              <span class="cadet-blue"> <</span
+              ><span class="candy-pink">div</span
+              ><span class="cadet-blue">></span>
+              <br />
+              <span class="hello-w">&lt;p> Hello World! &lt;/p></span>
+              <br />
+              <span class="cadet-blue"> <</span
+              ><span class="cadet-blue">/</span
+              ><span class="candy-pink">div</span
+              ><span class="cadet-blue">></span>
+              <br />
+              <br />
+              <span class="cadet-blue"> <</span
+              ><span class="cadet-blue">/</span
+              ><span class="candy-pink">body</span
+              ><span class="cadet-blue">></span>
+              <br />
+              <span class="cadet-blue"> <</span
+              ><span class="cadet-blue">/</span
+              ><span class="candy-pink">html</span
+              ><span class="cadet-blue">></span>
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+
+        <!-- -------- CSS BOX -------- -->
+        <div class="sample-box">
+          <div class="box">
+            <div class="title-box">
+              <ion-icon
+                class="cog-icon"
+                name="cog-outline"
+              ></ion-icon>
+              <p class="example-title">CSS Example</p>
+              <ion-icon
+                class="arrow-down-icon"
+                name="chevron-down-outline"
+              ></ion-icon>
+            </div>
+
+            <div class="text-content">
+              <span class="candy-pink">body</span>
+              <span class="gold">{</span> <br />
+              <span class="cadet-blue">background-color:</span>
+              <span class="max-blue">lightblue;</span> <br />
+              <span class="gold">}</span>
+              <br />
+              <br />
+              <span class="candy-pink">h1</span>
+              <span class="gold">{</span> <br />
+              <span class="cadet-blue">color:</span>
+              <span class="max-blue">white;</span> <br />
+              <span class="cadet-blue">text-align:</span>
+              <span class="max-blue">center;</span> <br />
+              <span class="gold">}</span>
+              <br />
+              <br />
+              <span class="candy-pink">p</span>
+              <span class="gold">{</span> <br />
+              <span class="cadet-blue">font-family:</span>
+              <span class="max-blue">'Roboto Mono';</span> <br />
+              <span class="gold">}</span>
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+
+        <div
+          data-aos="fade-left"
+          data-aos-duration="1500"
+          class="text-title-box"
+        >
+          <h3 class="text-title css--heading">What is CSS?</h3>
+          <p class="desc text-title-description">
+            CSS stands for Cascading Style Sheets language and is used
+            to stylize elements written in a markup language such as
+            HTML. It separates the content from the visual
+            representation of the site.
+          </p>
+        </div>
+
+        <!-- -------- JS SAMPLE BOX -------- -->
+
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          class="text-title-box animate__animated animate__fadeInUp"
+        >
+          <h3 class="text-title js--heading">What is JavaScript?</h3>
+          <p class="desc text-title-description">
+            JavaScript is a scripting language that enables you to
+            create dynamically updating content, control multimedia,
+            animate images, and pretty much everything else.
+          </p>
+        </div>
+        <div class="sample-box">
+          <div class="box">
+            <div class="title-box">
+              <ion-icon
+                class="cog-icon"
+                name="cog-outline"
+              ></ion-icon>
+              <p class="example-title js--heading">
+                JavaScript Example
+              </p>
+              <ion-icon
+                class="arrow-down-icon"
+                name="chevron-down-outline"
+              ></ion-icon>
+            </div>
+
+            <div class="text-content">
+              <span class="cadet-blue"> <</span
+              ><span class="candy-pink">button</span>
+              <span class="get-elem-color">onclick</span>
+              <span class="candy-pink">=</span>
+              <span class="gold">"myFunction()"</span
+              ><span class="cadet-blue">>Click Me!</span
+              ><span class="cadet-blue"> <</span
+              ><span class="cadet-blue">/</span
+              ><span class="candy-pink">button</span
+              ><span class="cadet-blue">></span>
+              <br />
+              <br />
+              <br />
+              <span class="cadet-blue"> <</span
+              ><span class="candy-pink">script</span
+              ><span class="cadet-blue">></span>
+              <br />
+              <span class="cadet-blue">function myFunction</span>
+              <span class="gold">() {</span>
+              <br />
+              <br />
+              <span class="cadet-blue">let x</span>
+              <span class="candy-pink">=</span>
+              <span class="blue-jeans">document</span
+              ><span class="get-elem-color">.getElementById</span>
+              <span class="deep-mauve">(</span
+              ><span class="gold">"demo"</span
+              ><span class="deep-mauve">)</span
+              ><span class="cadet-blue">;</span> <br />
+              <div class="padding-left">
+                <span class="blue-jeans">x.style</span
+                ><span class="cadet-blue">.fontSize</span>
+                <span class="candy-pink">=</span>
+                <span class="gold">"25px"</span
+                ><span class="cadet-blue">;</span>
+                <br />
+                <span class="blue-jeans">x.style</span
+                ><span class="cadet-blue">.color</span>
+                <span class="candy-pink">=</span>
+                <span class="gold">"red"</span
+                ><span class="cadet-blue">;</span>
+              </div>
+              <br />
+              <span class="gold">}</span>
+              <br />
+              <span class="cadet-blue"> <</span
+              ><span class="cadet-blue">/</span
+              ><span class="cadet-blue">script</span
+              ><span class="cadet-blue">></span>
+              <br />
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="main-container">
+        <div class="second-cont">
+          <div class="footer--flex">
+            <img
+              class="icon"
+              src="/frontend/img/icon.png"
+              alt="Web Head"
+            />
+            <span class="footer-text">Web Head Project</span>
+          </div>
+          <span class="footer-sub-text">
+            Free Educational Website for Front-end Development <br />
+            created by Gordon College students.
+          </span>
+        </div>
+        <div class="ar-reserved">
+          © 2023 Web Head Project. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      let subMenu = document.getElementById('subMenu');
+
+      function toggleMenu() {
+        subMenu.classList.toggle('open-menu');
+      }
+    </script>
+  </body>
+</html>

@@ -25,7 +25,7 @@ const login = async (username, password) => {
         JSON.stringify(jsonContact)
       );
 
-      location.href = './../index.html';
+      location.href = './../main.html';
     } else {
       alert(`${res.data.message}`);
     }
