@@ -19,8 +19,7 @@ const login = async (username, password, id) => {
     });
 
     if (res.data.status === 'success') {
-      alert(`${res.data.message}`);
-      location.href = './../login/login.html';
+      location.href = './../index.html';
     } else {
       alert(`${res.data.message}`);
     }
