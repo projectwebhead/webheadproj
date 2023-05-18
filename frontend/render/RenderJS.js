@@ -8,7 +8,7 @@ class RenderJS {
   JsFun1 = this.javascript.part1;
   JsFun2 = this.javascript.part2;
   JsFun3 = this.javascript.devTools;
-  JsFun4 = this.javascript.parrt3;
+  JsFun4 = this.javascript.part3;
   JsFun5 = this.javascript.problemSovling;
   JsFun6 = this.javascript.understandingErrors;
   JsFun7 = this.javascript.PROJECT;
