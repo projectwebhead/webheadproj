@@ -38,6 +38,7 @@ const fetchUserData = async (id) => {
         _id: id,
       },
     });
+
     return res.data;
   } catch (err) {
     console.log(err.response.data);
@@ -74,7 +75,7 @@ const profileInfo = async () => {
 
   const hProg = utility.progressCounter(h, html, 'h', profile.data);
   const cProg = utility.progressCounter(c, css, 'c', profile.data);
-  // const fProg = utility.progressCounter(f, flex, 'f', profile.data);
+  const fProg = utility.progressCounter(f, flex, 'f', profile.data);
   const jProg = utility.progressCounter(j, js, 'j', profile.data);
 
   currentUser.innerHTML =
@@ -82,7 +83,7 @@ const profileInfo = async () => {
     profile.data.username.slice(1);
 
   htmlProg.innerHTML = hProg;
-  cssProg.innerHTML = cProg;
+  cssProg.innerHTML = cProg + fProg;
   jsProg.innerHTML = jProg;
 };
 

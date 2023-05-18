@@ -19,8 +19,6 @@ const login = async (username, password) => {
     });
 
     if (res.data.status === 'success') {
-      console.log(res.data.data._id);
-      alert(`${res.data.message}`);
       var jsonContact = [{ id: res.data.data._id }];
       sessionStorage.setItem(
         'currentUser',
@@ -29,7 +27,6 @@ const login = async (username, password) => {
 
       location.href = './../index.html';
     } else {
-      console.log(res.data);
       alert(`${res.data.message}`);
     }
   } catch (err) {
@@ -42,8 +39,6 @@ const users = async () => {
       method: 'GET',
       url: `${baseURL}/api/v1/auth/login`,
     });
-
-    console.log(res.data);
   } catch (err) {
     console.log(err.response.data);
   }
